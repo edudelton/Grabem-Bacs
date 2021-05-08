@@ -1,7 +1,6 @@
 require 'stripe'
 require 'sinatra'
 require 'dotenv'
-require 'rubygems'
 
 # Replace if using a different env file or config
 Dotenv.load
