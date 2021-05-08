@@ -1,4 +1,4 @@
-![Grabem Bacs](./images/grabem_logo.jpg)
+![Grabem Bacs](./client/images/grabem_logo.jpg)
 
 # Grabem Bacs Checkout
 
