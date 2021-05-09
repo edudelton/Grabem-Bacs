@@ -22,11 +22,11 @@
 
         var url_param_success = (get_user_param_from_url('success'));
         if(url_param_success == 'true'){
-          $('#message').html('<b style="color:green;">Thanks! Payment has been completed successfully.</b>');
+          $('#message').html('<b style="color:green;padding: 5px; border: 1px solid #ccc; margin-bottom: 28px!important;">Thanks! Payment has been completed successfully.</b><br/>');
         }
         var url_param_cancel = (get_user_param_from_url('cancel'));
         if(url_param_cancel == 'true'){
-          $('#message').html('<b style="color:red;">Error: Payment cancelled.</b>');
+          $('#message').html('<b style="color:red;padding: 5px; border: 1px solid #ccc; margin-bottom: 28px!important;">Error: Payment cancelled.</b><br/>');
         }
 
       });
