@@ -4,12 +4,35 @@
     <meta charset="utf-8" />
     <title>Bacs Debit Grabem Purchase</title>
     <link rel="stylesheet" href="styles.css" title="" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
+
+<script>
+
+  function get_user_param_from_url( name, url ) {
+      if (!url) url = location.href;
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( url );
+      return results == null ? null : results[1];
+  }
+
+  var url_param_success = (get_user_param_from_url('success'));
+
+  if(url_param_success == 'true'){
+    $('#message').html('<b>Thanks! Payment has been completed successfully.</b>');
+  }
+
+
+</script>
+
   </head>
   <body>
     <div id="main">
       <div id="container">
         <div id="panel">
+          <div id="message"></div>
           <h1>Grabem Bacs Debit Subscription</h1>
           <form action="redirect" method="POST">
           <img
