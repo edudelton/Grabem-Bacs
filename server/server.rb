@@ -30,8 +30,8 @@ post '/redirect' do
         quantity: 1
       }
     ],
-    success_url: 'https://grabem-bacs.herokuapp.com:5000/?success=true',
-    cancel_url: 'https://grabem-bacs.herokuapp.com:5000/?cancel=true',
+    success_url: 'https://grabem-bacs.herokuapp.com/?success=true',
+    cancel_url: 'https://grabem-bacs.herokuapp.com/?cancel=true',
   })
   @session_id = @session.id
 
