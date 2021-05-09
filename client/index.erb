@@ -7,25 +7,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
 
-<script>
+    <script>
 
-  function get_user_param_from_url( name, url ) {
-      if (!url) url = location.href;
-      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-      var regexS = "[\\?&]"+name+"=([^&#]*)";
-      var regex = new RegExp( regexS );
-      var results = regex.exec( url );
-      return results == null ? null : results[1];
-  }
+      function get_user_param_from_url( name, url ) {
+          if (!url) url = location.href;
+          name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+          var regexS = "[\\?&]"+name+"=([^&#]*)";
+          var regex = new RegExp( regexS );
+          var results = regex.exec( url );
+          return results == null ? null : results[1];
+      }
+      
+      $(document).ready(function(){
 
-  var url_param_success = (get_user_param_from_url('success'));
+        var url_param_success = (get_user_param_from_url('success'));
+        if(url_param_success == 'true'){
+          $('#message').html('<b style="color:green;">Thanks! Payment has been completed successfully.</b>');
+        }
+        var url_param_cancel = (get_user_param_from_url('cancel'));
+        if(url_param_cancel == 'true'){
+          $('#message').html('<b style="color:red;">Error: Payment cancelled.</b>');
+        }
 
-  if(url_param_success == 'true'){
-    $('#message').html('<b>Thanks! Payment has been completed successfully.</b>');
-  }
+      });
 
 
-</script>
+    </script>
 
   </head>
   <body>
