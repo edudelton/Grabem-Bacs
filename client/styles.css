@@ -48,6 +48,7 @@
     height: 100vh;
     text-align: center;
     transition: width 0.3s ease-in-out;
+    display: none;
   }
   
   #main.checkout:not(.success):not(.error) {
